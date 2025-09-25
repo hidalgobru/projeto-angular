@@ -1,27 +1,32 @@
-<div>
+<mat-card>
+  <mat-toolbar color="primary">
+    <span>Biblioteca de Faixas</span>
+  </mat-toolbar>
   <table mat-table [dataSource]="songs">
-
     <!-- Title Column -->
     <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef> Título </th>
-      <td mat-cell *matCellDef="let song"> {{song.title}} </td>
+      <th mat-header-cell *matHeaderCellDef>Título</th>
+      <td mat-cell *matCellDef="let song">{{ song.title }}</td>
     </ng-container>
 
     <!-- Artist Column -->
     <ng-container matColumnDef="artist">
-      <th mat-header-cell *matHeaderCellDef> Artista/Banda </th>
-      <td mat-cell *matCellDef="let song"> {{song.artist}} </td>
+      <th mat-header-cell *matHeaderCellDef>Artista/Banda</th>
+      <td mat-cell *matCellDef="let song">{{ song.artist }}</td>
     </ng-container>
 
     <!-- Genre Column -->
     <ng-container matColumnDef="genre">
-      <th mat-header-cell *matHeaderCellDef> Gênero </th>
-      <td mat-cell *matCellDef="let song"> {{song.genre}} </td>
+      <th mat-header-cell *matHeaderCellDef>Gênero</th>
+      <td mat-cell *matCellDef="let song">{{ song.genre }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-</div>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</mat-card>
