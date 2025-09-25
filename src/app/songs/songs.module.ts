@@ -1,10 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { SongsRoutingModule } from './songs-routing.module';
 import { SongsComponent } from './songs/songs.component';
 
@@ -14,10 +11,7 @@ import { SongsComponent } from './songs/songs.component';
   imports: [
     CommonModule,
     SongsRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatCardModule,
-    MatToolbarModule
+    AppMaterialModule
   ]
 })
 export class SongsModule { }
