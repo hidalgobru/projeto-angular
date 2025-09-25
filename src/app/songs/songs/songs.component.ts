@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { Songs } from '../model/songs';
+import { SongsService } from '../services/songs.service';
 
 @Component({
   selector: 'app-songs',
@@ -10,18 +11,20 @@ import { Songs } from '../model/songs';
   styleUrls: ['./songs.component.scss'],
 })
 export class SongsComponent implements OnInit {
-  songs: Songs[] = [
-    { _id: '1', title: "Bohemian Rhapsody", artist: "Queen", genre: "Rock"}
-  ];
+  //aqui será renderizado a lista de músicas
+  songs: Songs[] = [];
   //sempre que fizer referências de variáveis, não se coloca o modificador de acesso 'private'
   displayedColumns = ['title', 'artist', 'genre'];
+
   dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   pageSizeOptions = [5, 10, 20];
 
-  constructor() {
+  constructor(private songsService: SongsService;) {
     //this.songs = [];
+    //this.songsService = new SongsService();
+    this.songs = this.songsService.list();
   }
 
   ngAfterViewInit() {
