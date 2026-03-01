@@ -21,7 +21,7 @@ export class SongsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   pageSizeOptions = [5, 10, 20];
 
-  constructor(private songsService: SongsService;) {
+  constructor(private songsService: SongsService) {
     //this.songs = [];
     //this.songsService = new SongsService();
     this.songs = this.songsService.list();
