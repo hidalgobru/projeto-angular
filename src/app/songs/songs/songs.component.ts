@@ -14,7 +14,7 @@ export class SongsComponent implements OnInit {
   //aqui será renderizado a lista de músicas
   songs: Songs[] = [];
   //sempre que fizer referências de variáveis, não se coloca o modificador de acesso 'private'
-  displayedColumns = ['title', 'artist', 'genre'];
+  displayedColumns = ['title', 'artist', 'date', 'genre'];
 
   dataSource = new MatTableDataSource();
 

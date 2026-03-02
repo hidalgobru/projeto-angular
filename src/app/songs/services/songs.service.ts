@@ -12,7 +12,9 @@ export class SongsService {
 
   list(): Songs[] {
     return [
-      { _id: '1', title: 'Bohemian Rhapsody', artist: 'Queen', genre: 'Rock' },
+      { _id: '1', title: 'Bohemian Rhapsody', artist: 'Queen', date: 1975, genre: 'Rock' },
+      { _id: '2', title: 'Stairway to Heaven', artist: 'Led Zeppelin', date: 1971, genre: 'Rock' },
+      { _id: '3', title: 'Hotel California', artist: 'Eagles', date: 1976, genre: 'Rock' }
     ];
   }
 }
